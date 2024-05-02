@@ -1,6 +1,6 @@
 import React from "react";
 // import { createBrowserRouter } from "react-router-dom";
-import { LOGIN, PROFILE, PUBLIC, REGISTER, TOURS } from "./utils/variables";
+import { HOME, LOGIN, PROFILE, PUBLIC, REGISTER, TOURS } from "./utils/variables";
 // import App from "./App";
 import LoginPage from "./pages/RegisterLoginPage/LoginPage";
 import NotFoundPage from "./pages/NotFounPage/NotFoundPage";
@@ -41,10 +41,10 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 //   },
 // ];
 export const routesApp = [
-  // {
-  //   path: HOME,
-  //   element: <FirstScreen />,
-  // },
+  {
+    path: HOME,
+    element: <App/>,
+  },
   {
     path: PUBLIC,
     element: <FirstScreen />,
