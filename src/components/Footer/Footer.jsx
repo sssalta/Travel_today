@@ -1,11 +1,13 @@
 
+import logo from "../../assets/images/travel_today_logo.png"
+
 const Footer = () => {
   return (
     <footer>
       <div className="footer-content">
         <div className="logo">
           <a href="index.html">
-            <img src="assets/images/travel_today_logo.png" alt="Travel Today" />
+            <img src={logo} alt="Travel Today" />
           </a>
         </div>
         {/* <div className="social-media">
