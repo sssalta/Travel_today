@@ -43,7 +43,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 export const routesApp = [
   {
     path: HOME,
-    element: <App/>,
+    element: <FirstScreen/>,
   },
   {
     path: PUBLIC,

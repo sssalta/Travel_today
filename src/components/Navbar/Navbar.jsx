@@ -2,7 +2,7 @@ import "./Navbar.css";
 import { LOGIN, PROFILE, PUBLIC, REGISTER, TOURS } from "../../utils/variables";
 import logo from "../../assets/images/travel_today_logo.png";
 import { useAuth } from "../../hocs/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const { isAuth, logout } = useAuth();
@@ -18,10 +18,10 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <a href={PUBLIC}>Home</a>
+            <Link to={PUBLIC}>Home</Link>
           </li>
           <li>
-            <a href={isAuth ? TOURS : LOGIN}>Tours</a>
+            <Link to={isAuth ? TOURS : LOGIN}>Tours</Link>
           </li>
           {isAuth ? (
             <>
@@ -34,26 +34,48 @@ const Navbar = () => {
                 P
               </button>
               <li className="signin">
-                <a href={LOGIN} onClick={handleLogout}>
+                <Link to={LOGIN} onClick={handleLogout}>
                   LogOut
-                </a>
+                </Link>
               </li>
             </>
           ) : (
             <>
               <li className="signup">
-                <a href={REGISTER}>Sign Up</a>
+                <Link to={REGISTER}>Sign Up</Link>
               </li>
               <li className="signin">
-                <a href={LOGIN}>Sign In</a>
+                <Link to={LOGIN}>Sign In</Link>
               </li>
             </>
           )}
         </ul>
         <div className="burger-menu">
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
+          <div className="bar">
+            <Link to={isAuth ? TOURS : LOGIN}>Tours</Link>
+          </div>
+          {isAuth ? (
+            <>
+              <div className="bar">
+                <Link to={PROFILE}>Profile</Link>
+              </div>
+              <div className="bar">
+                <Link to={REGISTER}>Sign Up</Link>
+              </div>
+              <Link to={LOGIN} onClick={handleLogout}>
+                LogOut
+              </Link>
+            </>
+          ) : (
+            <>
+              <div className="bar">
+                <Link to={REGISTER}>Sign Up</Link>
+              </div>
+              <div className="bar">
+                <Link to={LOGIN}>Sign In</Link>
+              </div>
+            </>
+          )}
         </div>
       </nav>
     </header>
