@@ -34,7 +34,9 @@ nav ul li a {
 nav ul li a:hover {
   text-decoration: underline;
 }
-
+.burger-menu {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   nav ul {
     display: none;
@@ -74,11 +76,11 @@ nav ul li a:hover {
     cursor: pointer;
   }
 
-  .burger-menu .bar {
+  .bar {
     width: 25px;
     height: 3px;
     background-color: white;
-    margin: 5px 0;
+    margin: 15px 0;
   }
 }
 
